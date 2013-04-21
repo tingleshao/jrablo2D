@@ -8,9 +8,7 @@ package module;
  *
  * @author Chong
  */
-public class Atom {
-    private float x;
-    private float y;
-    private Spoke[] spokes;
+public class Spoke {
+    private float length;
     
 }
