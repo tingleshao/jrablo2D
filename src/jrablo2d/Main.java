@@ -48,7 +48,8 @@ package jrablo2d;
  * HelloWorldSwing.java requires no other files. 
  */
 import javax.swing.*;        
- 
+import module.*;
+
 public class Main {
     /**
      * Create the GUI and show it.  For thread safety,
@@ -60,10 +61,12 @@ public class Main {
         JFrame frame = new JFrame("HelloWorldSwing");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
+        SRep srep = new SRep();
         //Add the ubiquitous "Hello World" label.
-        JLabel label = new JLabel("Hello World");
+        JLabel label = new JLabel(srep.getMessage());
         frame.getContentPane().add(label);
- 
+        
+               
         //Display the window.
         frame.pack();
         frame.setVisible(true);
@@ -73,7 +76,9 @@ public class Main {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
+                
                 createAndShowGUI();
             }
         });
