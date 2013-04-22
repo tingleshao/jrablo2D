@@ -9,6 +9,13 @@ package module;
  * @author Chong
  */
 public class SRep {
+    private int index;
+    
+    private Atom[] atoms;
+    private boolean hasInterpolation;
+    
+    
+    
     public SRep() {
         System.out.println("Srep initialized.");
         
