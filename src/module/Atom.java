@@ -9,8 +9,10 @@ package module;
  * @author Chong
  */
 public class Atom {
+    
     private double x;
     private double y;
-    private Spoke[] spokes;
+    private AtomType type;
+    
     
 }
