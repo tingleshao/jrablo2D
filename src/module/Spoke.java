@@ -10,5 +10,10 @@ package module;
  */
 public class Spoke {
     private float length;
+    private Point startingPoint;
+    private Point endPoint;
+    
+    
+    
     
 }

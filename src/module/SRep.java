@@ -15,7 +15,6 @@ public class SRep {
     private boolean hasInterpolation;
     
     
-    
     public SRep() {
         System.out.println("Srep initialized.");
         
