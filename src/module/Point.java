@@ -9,18 +9,18 @@ package module;
  * @author Chong
  */
 public class Point {
-    private float x;
-    private float y;
+    private double x;
+    private double y;
     public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
     
-    public float getX() {
+    public double getX() {
         return x;
     }
     
-    public float getY() {
+    public double getY() {
         return y;
     }
 }
