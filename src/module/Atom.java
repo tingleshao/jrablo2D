@@ -17,13 +17,16 @@ public class Atom {
     
     public Atom(){
         this.type = AtomType.INSIDE;
-        spokes = new ArrayList<Spoke>();
-        base = null;
+        this.spokes = new ArrayList<Spoke>();
+        this.base = null;
     }
     
     public Atom(double x, double y, Spoke... spokes) {
+        this.base = new Point(x, y);
+        for (Spoke s : spokes) {
+            this.spokes.add(s);
+        }
         
-    
     }
     
     public double getX() {
