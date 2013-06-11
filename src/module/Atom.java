@@ -11,12 +11,27 @@ import RabloExceptions.*;
  */
 public class Atom {
     
+    private Point base;
     private AtomType type;
     private ArrayList<Spoke> spokes; 
     
     public Atom(){
         this.type = AtomType.INSIDE;
         spokes = new ArrayList<Spoke>();
+        base = null;
+    }
+    
+    public Atom(double x, double y, Spoke... spokes) {
+        
+    
+    }
+    
+    public double getX() {
+        return base.getX();
+    }
+    
+    public double getY() {
+        return base.getY();
     }
     
     public AtomType getType() {
