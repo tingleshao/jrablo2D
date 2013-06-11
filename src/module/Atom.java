@@ -26,7 +26,6 @@ public class Atom {
         for (Spoke s : spokes) {
             this.spokes.add(s);
         }
-        
     }
     
     public double getX() {
@@ -57,5 +56,4 @@ public class Atom {
             throw new AtomException("the atom only has two spokes!");
         } 
     }
-    
 }
