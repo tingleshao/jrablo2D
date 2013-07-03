@@ -58,17 +58,19 @@ public class Main {
      */
     private static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("HelloWorldSwing");
+        JFrame frame = new JFrame("Object in Context 2D");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         SRep srep = new SRep();
         //Add the ubiquitous "Hello World" label.
         JLabel label = new JLabel(srep.getMessage());
         frame.getContentPane().add(label);
-        
+      
                
         //Display the window.
-        frame.pack();
+        frame.setSize(800, 600);
+
+    //    frame.pack();
         frame.setVisible(true);
     }
  
