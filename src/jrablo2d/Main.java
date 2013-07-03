@@ -69,7 +69,7 @@ public class Main {
         JLabel label = new JLabel(srep.getMessage());
         frame.getContentPane().add(label);
         MainPanel mp = new MainPanel(as);
-               
+        frame.getContentPane().add(mp);
         //Display the window.
         frame.setSize(800, 600);
 

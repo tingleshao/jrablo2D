@@ -28,6 +28,10 @@ public class SRep {
         return this.atoms;
     }
     
+    public void setAtoms(ArrayList<Atom> atoms) {
+        this.atoms = atoms;
+    }
+    
     public boolean hasInterpolation() {
         return this.hasInterpolation;
     }
