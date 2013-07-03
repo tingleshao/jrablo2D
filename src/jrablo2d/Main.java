@@ -49,7 +49,8 @@ package jrablo2d;
  */
 import javax.swing.*;        
 import module.*;
-import java.awt.*;
+import view.*;
+import java.util.ArrayList;
 
 public class Main {
     /**
@@ -63,10 +64,11 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         SRep srep = new SRep();
-        //Add the ubiquitous "Hello World" label.
+        ArrayList<SRep> as = new ArrayList<SRep>();
+        as.add(srep);
         JLabel label = new JLabel(srep.getMessage());
         frame.getContentPane().add(label);
-      
+        MainPanel mp = new MainPanel(as);
                
         //Display the window.
         frame.setSize(800, 600);

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class SRep {
     private int index;
     
-    private ArrayList<Atom> atoms;
+    private ArrayList<Atom> atoms = new ArrayList<Atom>();
     private boolean hasInterpolation;
     
     
