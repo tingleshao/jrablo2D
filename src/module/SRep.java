@@ -4,6 +4,7 @@
  */
 package module;
 
+import java.util.ArrayList;
 /**
  *
  * @author Chong
@@ -11,7 +12,7 @@ package module;
 public class SRep {
     private int index;
     
-    private Atom[] atoms;
+    private ArrayList<Atom> atoms;
     private boolean hasInterpolation;
     
     
@@ -21,5 +22,13 @@ public class SRep {
     }
     public String getMessage() {
         return "srep1";
+    }
+    
+    public ArrayList<Atom> getAtoms() {
+        return this.atoms;
+    }
+    
+    public boolean hasInterpolation() {
+        return this.hasInterpolation;
     }
 }

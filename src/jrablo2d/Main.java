@@ -49,6 +49,7 @@ package jrablo2d;
  */
 import javax.swing.*;        
 import module.*;
+import java.awt.*;
 
 public class Main {
     /**
