@@ -4,6 +4,7 @@
  */
 package module;
 
+import java.awt.Color;
 import java.util.ArrayList;
 /**
  *
@@ -14,11 +15,11 @@ public class SRep {
     
     private ArrayList<Atom> atoms = new ArrayList<Atom>();
     private boolean hasInterpolation;
-    
+    private Color color;
     
     public SRep() {
         System.out.println("Srep initialized.");
-        
+        this.color = Color.BLACK;
     }
     public String getMessage() {
         return "srep1";
@@ -30,6 +31,14 @@ public class SRep {
     
     public void setAtoms(ArrayList<Atom> atoms) {
         this.atoms = atoms;
+    }
+    
+    public Color getColor() {
+        return this.color;
+    }
+    
+    public void setColor(Color color) {
+        this.color = color;
     }
     
     public void addAtom(Atom atom) {
