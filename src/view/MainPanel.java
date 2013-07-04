@@ -18,11 +18,19 @@ public class MainPanel extends JPanel {
     
     ArrayList<SRep> sreps;
     public MainPanel(ArrayList<SRep> sreps) {
-         this.sreps = sreps;
-         this.refresh((Graphics2D)this.getGraphics());
+       // this.setSize(800,600);
+         this.sreps = sreps;  
     }
     
+    public void paintComponent(Graphics g) {
+         super.paintComponent(g);
+         Graphics2D g2 = (Graphics2D) g;
+         
+         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+         this.refresh(g2);
+    }
     public void refresh(Graphics2D g) {
+     ///    Graphics2D g = (Graphics2D)this.getGraphics();
          if (sreps.isEmpty()) {
              return;
          }
@@ -42,7 +50,15 @@ public class MainPanel extends JPanel {
     }
     
     public void drawAtom(Atom a, Graphics2D g) {
-        g.fillOval((int)a.getX(), (int)a.getY(), 5, 5);
+  //     super.paintComponents(g);
+         System.out.println("MainPanel is visible: " + Boolean.toString(this.isDisplayable()));
+        
+        System.out.println((int)a.getX());
+        System.out.println((int)a.getY());
+        System.out.println(g.toString());
+        g.setPaint(Color.YELLOW);
+        g.fillOval(100, 100, 100, 100);
+
     }
     
 }

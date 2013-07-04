@@ -32,6 +32,10 @@ public class SRep {
         this.atoms = atoms;
     }
     
+    public void addAtom(Atom atom) {
+        this.atoms.add(atom);
+    }
+    
     public boolean hasInterpolation() {
         return this.hasInterpolation;
     }

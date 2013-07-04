@@ -47,6 +47,7 @@ package jrablo2d;
 /*
  * HelloWorldSwing.java requires no other files. 
  */
+import java.awt.Dimension;
 import javax.swing.*;        
 import module.*;
 import view.*;
@@ -63,19 +64,24 @@ public class Main {
         JFrame frame = new JFrame("Object in Context 2D");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
+        Atom a = new Atom(10,10);
         SRep srep = new SRep();
+        srep.addAtom(a);
         ArrayList<SRep> as = new ArrayList<SRep>();
         as.add(srep);
-        Atom a = new Atom();
-        JLabel label = new JLabel(srep.getMessage());
-        frame.getContentPane().add(label);
-        MainPanel mp = new MainPanel(as);
-        frame.getContentPane().add(mp);
-        //Display the window.
-        frame.setSize(800, 600);
-         
-    //    frame.pack();
         frame.setVisible(true);
+   //     frame.setSize(800, 600);
+     //   JLabel label = new JLabel(srep.getMessage());
+     //   frame.getContentPane().add(label);
+        MainPanel mp = new MainPanel(as);
+        
+        mp.setPreferredSize(new Dimension(800,600));
+        frame.add(mp);
+        mp.setVisible(true);
+       // mp.refresh();
+        System.out.println("Frame is visible: " + Boolean.toString(frame.isDisplayable()));
+        System.out.println("MainPanel is visible: " + Boolean.toString(mp.isDisplayable()));
+        frame.pack();
     }
  
     public static void main(String[] args) {
