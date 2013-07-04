@@ -66,13 +66,14 @@ public class Main {
         SRep srep = new SRep();
         ArrayList<SRep> as = new ArrayList<SRep>();
         as.add(srep);
+        Atom a = new Atom();
         JLabel label = new JLabel(srep.getMessage());
         frame.getContentPane().add(label);
         MainPanel mp = new MainPanel(as);
         frame.getContentPane().add(mp);
         //Display the window.
         frame.setSize(800, 600);
-
+         
     //    frame.pack();
         frame.setVisible(true);
     }
