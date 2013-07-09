@@ -65,7 +65,8 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         Atom a = new Atom(100,100);
-        a.setUpperSpoke(new Spoke(new Point(0,0), new Point(0,100)));
+        a.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(100,0)));
+        a.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-100,0)));
         SRep srep = new SRep();
         srep.addAtom(a);
         ArrayList<SRep> as = new ArrayList<SRep>();

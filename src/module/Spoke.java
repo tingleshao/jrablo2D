@@ -10,11 +10,11 @@ package module;
  */
 public class Spoke {
     private double length = -1;
-    private Point startPoint;
-    private Point endPoint;
+    private AtomPoint startPoint;
+    private AtomPoint endPoint;
     private double angle;
     
-    public Spoke(Point start, Point end) {
+    public Spoke(AtomPoint start, AtomPoint end) {
         this.startPoint = start;
         this.endPoint = end;
     }
@@ -31,11 +31,11 @@ public class Spoke {
         return this.length;
     }
     
-    public Point getStart(){
+    public AtomPoint getStart(){
         return this.startPoint;
     }
     
-    public Point getEnd() {
+    public AtomPoint getEnd() {
         return this.endPoint;
     }
     

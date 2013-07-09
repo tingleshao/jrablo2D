@@ -8,12 +8,12 @@ package module;
  *
  * @author Chong
  */
-public class Point {
+public class AtomPoint {
     
     private double x;
     private double y;
     
-    public Point(double x, double y) {
+    public AtomPoint(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -24,6 +24,14 @@ public class Point {
     
     public double getY() {
         return y;
+    }
+    
+    public int getXInt() {
+        return (int) this.x;
+    }
+    
+    public int getYInt() {
+        return (int) this.y;
     }
 }
     

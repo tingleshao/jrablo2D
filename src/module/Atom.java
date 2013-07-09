@@ -12,7 +12,7 @@ import java.util.Arrays;
  */
 public class Atom {
     
-    private Point base;
+    private AtomPoint base;
     private AtomType type;
     private ArrayList<Spoke> spokes; 
     
@@ -23,20 +23,20 @@ public class Atom {
     }
     
     public Atom(double x, double y, Spoke... spokes) {
-        this.base = new Point(x, y);
+        this.base = new AtomPoint(x, y);
         this.spokes = new ArrayList<>();
         this.spokes.addAll(Arrays.asList(spokes));
     }
     
     public Atom(double x, double y, ArrayList<Spoke> spokes) {
-        this.base = new Point(x, y);
+        this.base = new AtomPoint(x, y);
         this.spokes = new ArrayList<>();
         this.spokes = spokes;
     }
     
     public Atom(double x, double y) {
         this.spokes = new ArrayList<>();
-        this.base = new Point(x, y);
+        this.base = new AtomPoint(x, y);
     }    
     
     public double getX() {
@@ -46,6 +46,16 @@ public class Atom {
     public double getY() {
         return base.getY();
     }
+    
+    public int getXInt() {
+        return base.getXInt();
+    }
+    
+    public int getYInt() {
+        return base.getYInt();
+    }
+    
+    
     
     public AtomType getType() {
         return this.type;
