@@ -84,7 +84,7 @@ public class Main {
         MainPanel mp = new MainPanel(as);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-        mp.setPreferredSize(new Dimension(screenSize.width,screenSize.height));
+        mp.setPreferredSize(new Dimension(screenSize.width-77,screenSize.height));
         frame.add(mp);
         mp.setVisible(true);
        // mp.refresh();
@@ -98,8 +98,7 @@ public class Main {
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             @Override
-            public void run() {
-                
+            public void run() { 
                 createAndShowGUI();
             }
         });

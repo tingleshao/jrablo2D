@@ -20,7 +20,12 @@ public class MainPanel extends JPanel {
     ArrayList<SRep> sreps;
     public MainPanel(ArrayList<SRep> sreps) {
        // this.setSize(800,600);
+         this.setLayout(new FlowLayout(FlowLayout.LEFT));
          this.sreps = sreps;  
+         this.add(new JButton("Dilate"));
+         this.add(new JButton("Reset"));
+         this.add(new JButton("Check r-k File"));
+         this.add(new JButton("Interpolate All Spokes"));
     }
     
     public void paintComponent(Graphics g) {
