@@ -48,6 +48,7 @@ package jrablo2d;
  * HelloWorldSwing.java requires no other files. 
  */
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.*;        
 import module.*;
 import view.*;
@@ -67,8 +68,13 @@ public class Main {
         Atom a = new Atom(100,100);
         a.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(100,0)));
         a.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-100,0)));
+        Atom a2 = new Atom(200,200);
+        a2.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(100,0)));
+        a2.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-100,0)));
+  
         SRep srep = new SRep();
         srep.addAtom(a);
+        srep.addAtom(a2);
         ArrayList<SRep> as = new ArrayList<SRep>();
         as.add(srep);
         frame.setVisible(true);
@@ -76,8 +82,9 @@ public class Main {
      //   JLabel label = new JLabel(srep.getMessage());
      //   frame.getContentPane().add(label);
         MainPanel mp = new MainPanel(as);
-        
-        mp.setPreferredSize(new Dimension(800,600));
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        mp.setPreferredSize(new Dimension(screenSize.width,screenSize.height));
         frame.add(mp);
         mp.setVisible(true);
        // mp.refresh();
