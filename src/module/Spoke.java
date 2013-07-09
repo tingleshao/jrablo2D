@@ -12,10 +12,16 @@ public class Spoke {
     private double length = -1;
     private Point startPoint;
     private Point endPoint;
+    private double angle;
     
     public Spoke(Point start, Point end) {
         this.startPoint = start;
         this.endPoint = end;
+    }
+    
+    public Spoke(double angle) 
+    {
+        this.angle = angle;
     }
     
     public double getLength() {
@@ -24,5 +30,16 @@ public class Spoke {
         }
         return this.length;
     }
-            
+    
+    public Point getStart(){
+        return this.startPoint;
+    }
+    
+    public Point getEnd() {
+        return this.endPoint;
+    }
+    
+    public double getAngle() {
+        return this.angle;
+    }            
 }

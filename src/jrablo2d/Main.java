@@ -64,7 +64,8 @@ public class Main {
         JFrame frame = new JFrame("Object in Context 2D");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
-        Atom a = new Atom(10,10);
+        Atom a = new Atom(100,100);
+        a.setUpperSpoke(new Spoke(new Point(0,0), new Point(0,100)));
         SRep srep = new SRep();
         srep.addAtom(a);
         ArrayList<SRep> as = new ArrayList<SRep>();

@@ -53,12 +53,15 @@ public class MainPanel extends JPanel {
   //     super.paintComponents(g);
          System.out.println("MainPanel is visible: " + Boolean.toString(this.isDisplayable()));
         
-        System.out.println((int)a.getX());
-        System.out.println((int)a.getY());
-        System.out.println(g.toString());
-        g.setPaint(Color.YELLOW);
-        g.fillOval(100, 100, 100, 100);
-
+         System.out.println((int)a.getX());
+         System.out.println((int)a.getY());
+         System.out.println(g.toString());
+         g.setPaint(Color.YELLOW);
+         int upperLeftX = (int)(a.getX() - a.getRadius());
+         int upperLeftY = (int)(a.getY() - a.getRadius());
+         int diameter = (int)(a.getRadius() * 2);
+         g.drawOval(upperLeftX, upperLeftY, diameter, diameter);
+       
     }
     
 }

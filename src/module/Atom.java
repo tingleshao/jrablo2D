@@ -24,15 +24,18 @@ public class Atom {
     
     public Atom(double x, double y, Spoke... spokes) {
         this.base = new Point(x, y);
+        this.spokes = new ArrayList<>();
         this.spokes.addAll(Arrays.asList(spokes));
     }
     
     public Atom(double x, double y, ArrayList<Spoke> spokes) {
         this.base = new Point(x, y);
+        this.spokes = new ArrayList<>();
         this.spokes = spokes;
     }
     
     public Atom(double x, double y) {
+        this.spokes = new ArrayList<>();
         this.base = new Point(x, y);
     }    
     
@@ -56,6 +59,10 @@ public class Atom {
         return spokes.get(1);
     }
     
+    public double getRadius() {
+        return this.getUpperSpoke().getLength();
+    }
+    
     public Spoke getMiddleSpoke() throws AtomException {
         try {
             return spokes.get(2);
@@ -66,16 +73,21 @@ public class Atom {
     }
     
     public void setUpperSpoke(Spoke s) {
-        this.spokes.set(0, s);
+        if (s == null) {
+            System.out.print("spoke null");
+            return;
+        }
+        System.out.print(s.getClass());
+        this.spokes.add(0, s);
     }
     
     public void setLowerSpoke(Spoke s) {
-        this.spokes.set(1, s);
+        this.spokes.add(1, s);
     }
     
     public void setMiddleSpoke(Spoke s)  throws AtomException{
         if (this.type == AtomType.END) {
-            this.spokes.set(2,s);
+            this.spokes.add(2,s);
         }
         else {
             throw new AtomException("the atom should only have two spokes!");
