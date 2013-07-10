@@ -44,6 +44,14 @@ public class SRep {
                 i++;
             }
             this.locusFuncion = this.interpolator.interpolate(xs, ys);
+            double stepSize = ((atoms.get(atoms.size()-1)).getX() - (atoms.get(0)).getX()) / 100.0;
+            double currX = atoms.get(0).getX();
+            double currY;
+            for (int j = 0; j < 100; j++) {
+                currX = currX + stepSize;
+                currY = this.locusFuncion.value(currX);
+                locus.add(new LocusAtom((int)currX, (int)currY, this.color));
+            }
             System.out.println("Interpolation done!");
             this.hasInterpolation = true;
         }

@@ -20,6 +20,11 @@ public class LocusAtom {
         this.color = Color.BLACK;
     }
     
+    public LocusAtom(int x, int y, Color c ) {
+        this(x,y);
+        this.color = c;
+    }
+    
     public double getX() {
         return this.position.getX();
     }
