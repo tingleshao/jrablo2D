@@ -16,6 +16,7 @@ public class SRep {
     private int index;
     
     private PolynomialSplineFunction locusFuncion = null;
+    private ArrayList<LocusAtom> locus = new ArrayList<>();
     private JRabloSplineInterpolator interpolator = new JRabloSplineInterpolator();
     private ArrayList<Atom> atoms = new ArrayList<>();
     private boolean hasInterpolation;
@@ -48,7 +49,7 @@ public class SRep {
         }
     }
     
-    public double evaluate(double x) {
+    private double evaluate(double x) {
         if (this.hasInterpolation) {
              return this.locusFuncion.value(x);
         }
