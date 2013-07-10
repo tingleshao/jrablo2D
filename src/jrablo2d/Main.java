@@ -111,7 +111,7 @@ public class Main {
      
         
         frame.setVisible(true);
-     //     frame.setSize(800, 600);
+     //   frame.setSize(800, 600);
      //   JLabel label = new JLabel(srep.getMessage());
      //   frame.getContentPane().add(label);
         MainPanel mp = new MainPanel(as);
