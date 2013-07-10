@@ -47,6 +47,7 @@ package jrablo2d;
 /*
  * HelloWorldSwing.java requires no other files. 
  */
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.*;        
@@ -72,7 +73,7 @@ public class Main {
         Atom a2 = new Atom(190,180);
         a2.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
         a2.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
-        Atom a3 = new Atom(250,250);
+        Atom a3 = new Atom(230,300);
         a3.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
         a3.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
         atomsForSrep1.add(a1);
@@ -80,11 +81,35 @@ public class Main {
         atomsForSrep1.add(a3);
         
         SRep srep1 = new SRep();
+        srep1.setColor(Color.BLUE);
        // srep.addAtom(a);
        // srep.addAtom(a2);
         srep1.addAtoms(atomsForSrep1);
         ArrayList<SRep> as = new ArrayList<>();
         as.add(srep1);
+        
+        ArrayList<Atom> atomsForSrep2 = new ArrayList<>();
+        Atom a4 = new Atom(600,300);
+        a4.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(70,0)));
+        a4.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-70,0)));
+        Atom a5 = new Atom(490,380);
+        a5.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
+        a5.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
+        Atom a6 = new Atom(450,450);
+        a6.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
+        a6.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
+        atomsForSrep2.add(a4);
+        atomsForSrep2.add(a5);
+        atomsForSrep2.add(a6);
+        
+        SRep srep2 = new SRep();
+        srep2.setColor(Color.yellow);
+       // srep.addAtom(a);
+       // srep.addAtom(a2);
+        srep2.addAtoms(atomsForSrep2);
+        as.add(srep2);
+     
+        
         frame.setVisible(true);
      //     frame.setSize(800, 600);
      //   JLabel label = new JLabel(srep.getMessage());

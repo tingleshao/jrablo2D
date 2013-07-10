@@ -54,6 +54,7 @@ public class MainPanel extends JPanel {
              return;
          }
          for (Atom a : atoms) {
+             g.setPaint(s.getColor());
              this.drawAtom(a, g, true);
          }
     }
@@ -65,7 +66,7 @@ public class MainPanel extends JPanel {
          System.out.println((int)a.getX());
          System.out.println((int)a.getY());
          System.out.println(g.toString());
-         g.setPaint(Color.YELLOW);
+    //     g.setPaint(Color.YELLOW);
          int upperLeftX = (int)(a.getX() - a.getRadius());
          int upperLeftY = (int)(a.getY() - a.getRadius());
          int diameter = (int)(a.getRadius() * 2);
