@@ -26,6 +26,8 @@ public class MainPanel extends JPanel {
          this.add(new JButton("Reset"));
          this.add(new JButton("Check r-k File"));
          this.add(new JButton("Interpolate All Spokes"));
+         // set color
+         this.setBackground(Color.LIGHT_GRAY);
     }
     
     public void paintComponent(Graphics g) {

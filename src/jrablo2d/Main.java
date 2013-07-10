@@ -65,20 +65,28 @@ public class Main {
         JFrame frame = new JFrame("Object in Context 2D");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
-        Atom a = new Atom(100,100);
-        a.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(100,0)));
-        a.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-100,0)));
-        Atom a2 = new Atom(200,200);
-        a2.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(100,0)));
-        a2.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-100,0)));
-  
-        SRep srep = new SRep();
-        srep.addAtom(a);
-        srep.addAtom(a2);
-        ArrayList<SRep> as = new ArrayList<SRep>();
-        as.add(srep);
+        ArrayList<Atom> atomsForSrep1 = new ArrayList<>();
+        Atom a1 = new Atom(100,100);
+        a1.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(70,0)));
+        a1.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-70,0)));
+        Atom a2 = new Atom(190,180);
+        a2.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
+        a2.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
+        Atom a3 = new Atom(250,250);
+        a3.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
+        a3.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
+        atomsForSrep1.add(a1);
+        atomsForSrep1.add(a2);
+        atomsForSrep1.add(a3);
+        
+        SRep srep1 = new SRep();
+       // srep.addAtom(a);
+       // srep.addAtom(a2);
+        srep1.addAtoms(atomsForSrep1);
+        ArrayList<SRep> as = new ArrayList<>();
+        as.add(srep1);
         frame.setVisible(true);
-   //     frame.setSize(800, 600);
+     //     frame.setSize(800, 600);
      //   JLabel label = new JLabel(srep.getMessage());
      //   frame.getContentPane().add(label);
         MainPanel mp = new MainPanel(as);

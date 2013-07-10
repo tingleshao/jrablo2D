@@ -45,6 +45,13 @@ public class SRep {
         this.atoms.add(atom);
     }
     
+    public void addAtoms(ArrayList<Atom> atoms) 
+    {
+        for (Atom a : atoms) {
+            this.atoms.add(a);
+        }
+    }
+    
     public boolean hasInterpolation() {
         return this.hasInterpolation;
     }
