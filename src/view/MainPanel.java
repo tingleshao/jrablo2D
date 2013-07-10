@@ -64,7 +64,7 @@ public class MainPanel extends JPanel {
     }
     
     public void drawLocusAtom(int x, int y, Color c, Graphics2D g) {
-        
+        g.fillOval(x-3, y-3, )
     }
     
     public void drawAtom(Atom a, Graphics2D g, boolean displaySpoke)  {
