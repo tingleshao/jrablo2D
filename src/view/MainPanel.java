@@ -57,6 +57,10 @@ public class MainPanel extends JPanel {
              g.setPaint(s.getColor());
              this.drawAtom(a, g, true);
          }
+         if (s.hasInterpolation()) {
+         
+         
+         }
     }
     
     public void drawAtom(Atom a, Graphics2D g, boolean displaySpoke)  {

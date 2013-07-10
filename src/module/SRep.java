@@ -26,6 +26,11 @@ public class SRep {
         this.color = Color.BLACK;
     }
     
+    public SRep(int index) {
+        this();
+        this.index = index;
+    }
+    
     public void interpolateSelfLocus() {
         if (this.atoms.size() > 1) {
             // construct xs and ys array for interpolation 
