@@ -6,6 +6,8 @@ package module;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
+import toolbox.JRabloSplineInterpolator;
 /**
  *
  * @author Chong
@@ -13,7 +15,9 @@ import java.util.ArrayList;
 public class SRep {
     private int index;
     
-    private ArrayList<Atom> atoms = new ArrayList<Atom>();
+    private PolynomialSplineFunction locusFuncion = null;
+    private JRabloSplineInterpolator interpolator = new JRabloSplineInterpolator();
+    private ArrayList<Atom> atoms = new ArrayList<>();
     private boolean hasInterpolation;
     private Color color;
     
@@ -21,6 +25,31 @@ public class SRep {
         System.out.println("Srep initialized.");
         this.color = Color.BLACK;
     }
+    
+    public void interpolateSelfLocus() {
+        if (this.atoms.size() > 1) {
+            // construct xs and ys array for interpolation 
+            double[] xs = new double[atoms.size()];
+            double[] ys = new double[atoms.size()];
+            int i = 0;
+            for (Atom a : this.atoms) {
+                xs[i] = a.getX();
+                ys[i] = a.getY();
+                i++;
+            }
+            this.locusFuncion = this.interpolator.interpolate(xs, ys);
+            System.out.println("Interpolation done!");
+            this.hasInterpolation = true;
+        }
+    }
+    
+    public double evaluate(double x) {
+        if (this.hasInterpolation) {
+             return this.locusFuncion.value(x);
+        }
+        return 0.0;
+    }
+    
     public String getMessage() {
         return "srep1";
     }
@@ -36,6 +65,8 @@ public class SRep {
     public Color getColor() {
         return this.color;
     }
+    
+    
     
     public void setColor(Color color) {
         this.color = color;
