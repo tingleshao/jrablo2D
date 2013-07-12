@@ -64,7 +64,10 @@ public class MainPanel extends JPanel {
     }
     
     public void drawLocusAtom(int x, int y, Color c, Graphics2D g) {
-        g.fillOval(x-3, y-3, )
+        // later change it into two atoms, with the angle determined by spoke dirs
+        
+        g.fillOval(x-3, y-3, 6,6);
+        
     }
     
     public void drawAtom(Atom a, Graphics2D g, boolean displaySpoke)  {
