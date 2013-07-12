@@ -47,6 +47,11 @@ public class SRep {
             this.locusFunction = this.interpolator.interpolate(xs, ys);
             this.hasInterpolation = true;
             // this has a problem, check the Ruby code or using polar coordinate? 
+            
+            /**
+             * may be design an algorithm, that works by dividing the atoms into groups that has monotornic increasing relation
+            **/
+            
             double stepSize = ((atoms.get(atoms.size()-1)).getX() - (atoms.get(0)).getX()) / 100.0;
             double currX = atoms.get(0).getX();
             double currY;
