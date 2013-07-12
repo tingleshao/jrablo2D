@@ -7,6 +7,7 @@ package module;
 import java.awt.Color;
 import java.util.ArrayList;
 import org.apache.commons.math3.analysis.polynomials.PolynomialSplineFunction;
+import org.apache.commons.math3.exception.OutOfRangeException;
 import toolbox.JRabloSplineInterpolator;
 /**
  *
@@ -15,7 +16,7 @@ import toolbox.JRabloSplineInterpolator;
 public class SRep {
     private int index;
     
-    private PolynomialSplineFunction locusFuncion = null;
+    private PolynomialSplineFunction locusFunction = null;
     private ArrayList<LocusAtom> locus = new ArrayList<>();
     private JRabloSplineInterpolator interpolator = new JRabloSplineInterpolator();
     private ArrayList<Atom> atoms = new ArrayList<>();
@@ -43,23 +44,34 @@ public class SRep {
                 ys[i] = a.getY();
                 i++;
             }
-            this.locusFuncion = this.interpolator.interpolate(xs, ys);
+            this.locusFunction = this.interpolator.interpolate(xs, ys);
+            this.hasInterpolation = true;
+            // this has a problem, check the Ruby code or using polar coordinate? 
             double stepSize = ((atoms.get(atoms.size()-1)).getX() - (atoms.get(0)).getX()) / 100.0;
             double currX = atoms.get(0).getX();
             double currY;
             for (int j = 0; j < 100; j++) {
                 currX = currX + stepSize;
-                currY = this.locusFuncion.value(currX);
+                currY = this.evaluate(currX);
+                System.out.println(currY);
                 locus.add(new LocusAtom((int)currX, (int)currY, this.color));
             }
             System.out.println("Interpolation done!");
-            this.hasInterpolation = true;
+          
         }
     }
     
     private double evaluate(double x) {
-        if (this.hasInterpolation) {
-             return this.locusFuncion.value(x);
+        double lastValue = 0.0;
+        try {
+            if (this.hasInterpolation) {
+                lastValue = this.locusFunction.value(x);
+                 return lastValue;
+
+            }
+        }
+        catch(OutOfRangeException e) {
+            return lastValue;
         }
         return 0.0;
     }
@@ -80,7 +92,9 @@ public class SRep {
         return this.color;
     }
     
-    
+    public ArrayList<LocusAtom> getLocus() {
+        return this.locus;
+    }
     
     public void setColor(Color color) {
         this.color = color;

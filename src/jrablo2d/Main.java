@@ -86,18 +86,19 @@ public class Main {
        // srep.addAtom(a2);
         srep1.addAtoms(atomsForSrep1);
         ArrayList<SRep> as = new ArrayList<>();
+        srep1.interpolateSelfLocus();
         as.add(srep1);
         
         ArrayList<Atom> atomsForSrep2 = new ArrayList<>();
-        Atom a4 = new Atom(600,300);
-        a4.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(70,0)));
-        a4.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-70,0)));
+        Atom a6 = new Atom(600,300);
+        a6.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(70,0)));
+        a6.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-70,0)));
         Atom a5 = new Atom(490,380);
         a5.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
         a5.setLowerSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
-        Atom a6 = new Atom(450,450);
-        a6.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
-        a6.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
+        Atom a4 = new Atom(450,450);
+        a4.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(60,0)));
+        a4.setUpperSpoke(new Spoke(new AtomPoint(0,0), new AtomPoint(-60,0)));
         atomsForSrep2.add(a4);
         atomsForSrep2.add(a5);
         atomsForSrep2.add(a6);
@@ -107,8 +108,9 @@ public class Main {
        // srep.addAtom(a);
        // srep.addAtom(a2);
         srep2.addAtoms(atomsForSrep2);
+        srep2.interpolateSelfLocus();
         as.add(srep2);
-     
+         
         
         frame.setVisible(true);
      //   frame.setSize(800, 600);

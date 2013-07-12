@@ -58,8 +58,11 @@ public class MainPanel extends JPanel {
              this.drawAtom(a, g, true);
          }
          if (s.hasInterpolation()) {
-             
-         
+             for (LocusAtom a : s.getLocus()) {
+                 int x = a.getXInt();
+                 int y = a.getYInt();
+                 this.drawLocusAtom(x, y, s.getColor(), g);
+             }
          }
     }
     
@@ -76,7 +79,7 @@ public class MainPanel extends JPanel {
         
          System.out.println((int)a.getX());
          System.out.println((int)a.getY());
-         System.out.println(g.toString());
+    //     System.out.println(g.toString());
     //     g.setPaint(Color.YELLOW);
          int upperLeftX = (int)(a.getX() - a.getRadius());
          int upperLeftY = (int)(a.getY() - a.getRadius());
