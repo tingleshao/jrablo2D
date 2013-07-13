@@ -15,6 +15,7 @@ public class Atom {
     private AtomPoint base;
     private AtomType type;
     private ArrayList<Spoke> spokes; 
+    private AtomPoint atomPointDir;
     
     public Atom(){
         this.type = AtomType.INSIDE;
@@ -106,5 +107,8 @@ public class Atom {
     
     public void setSpokes(ArrayList<Spoke> spokes) {
         this.spokes = spokes;
+    }
+    
+    public void setAtomLocusDir(AtomPoint p) {
     }
 }

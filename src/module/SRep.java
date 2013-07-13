@@ -61,10 +61,18 @@ public class SRep {
                 System.out.println(currY);
                 locus.add(new LocusAtom((int)currX, (int)currY, this.color));
             }
-            System.out.println("Interpolation done!");
-          
+            System.out.println("Interpolation locus done!");
+            // compute the orientation of current inner atom 
+            
+         
         }
     }
+    
+    public void interpolateSpokes() {
+           System.out.println("interpolating spokes....");    
+    }
+    
+    
     
     private double evaluate(double x) {
         double lastValue = 0.0;
