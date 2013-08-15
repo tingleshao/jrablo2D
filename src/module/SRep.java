@@ -64,21 +64,25 @@ public class SRep {
             System.out.println("Interpolation locus done!");
             // compute the orientation of current inner atom 
             
+            // should force the upper and lower pair of spokes having the same angle to the medial locus
          
         }
     }
     
     public void interpolateSpokes() {
-           System.out.println("interpolating spokes....");    
+        System.out.println("interpolating spokes....");    
     }
     
-    
+    public void makeMeAnMrep() {
+        System.out.println("forcing the upper and lower spokes having the same angle to the medial curve");
+        
+    }
     
     private double evaluate(double x) {
         double lastValue = 0.0;
         try {
             if (this.hasInterpolation) {
-                lastValue = this.locusFunction.value(x);
+                 lastValue = this.locusFunction.value(x);
                  return lastValue;
 
             }
