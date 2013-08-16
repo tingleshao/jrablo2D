@@ -60,7 +60,7 @@ public class SRep {
             for (int j = 0; j < 100; j++) {
                 currX = currX + stepSize;
                 currY = this.evaluate(currX);
-                System.out.println(currY);
+        //        System.out.println(currY);
                 locus.add(new LocusAtom((int)currX, (int)currY, this.color));
             }
             System.out.println("Interpolation locus done!");
@@ -80,7 +80,27 @@ public class SRep {
     
     private void makeMeAnMrep() {
         System.out.println("forcing the upper and lower spokes having the same angle to the medial curve");
-            
+        if (this.locus.isEmpty()) {
+            System.out.println("needs interpolate locus first!");
+            return;
+        }
+        // compute the base index and v vector at base index 
+        ArrayList<Integer> baseIndices = new ArrayList<>();
+        int prevX = this.atoms.get(0).getXInt();
+        int totalX = this.atoms.get(this.atoms.size()-1).getXInt() - this.atoms.get(0).getXInt();
+        for (Atom a : this.atoms) {
+            int currX = a.getXInt();
+            int diffX = currX - prevX;
+            prevX = currX;
+            baseIndices.add(diffX * 100 / totalX);
+        }
+        baseIndices.set(0, 0);
+        baseIndices.set(baseIndices.size()-1, 99);
+        
+        // compute the v vectors
+        // handle from the first one to the last -1 one
+        // the last one is handled differently, namely the last interpolated atom minus the last-1 interpoalted atom
+        
     }
     
     private double evaluate(double x) {
