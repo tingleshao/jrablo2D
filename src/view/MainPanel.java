@@ -39,7 +39,6 @@ public class MainPanel extends JPanel {
     }
     
     public void refresh(Graphics2D g) {
-     ///    Graphics2D g = (Graphics2D)this.getGraphics();
          if (sreps.isEmpty()) {
              return;
          }

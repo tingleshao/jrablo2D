@@ -23,6 +23,8 @@ public class SRep {
     private boolean hasInterpolation;
     private Color color;
     
+    private boolean forcedMrep;
+    
     public SRep() {
         System.out.println("Srep initialized.");
         this.color = Color.BLACK;
@@ -49,8 +51,8 @@ public class SRep {
             // this has a problem, check the Ruby code or using polar coordinate? 
             
             /**
-             * may be design an algorithm, that works by dividing the atoms into groups that has monotornic increasing relation
-            **/
+             * may be designing an algorithm, which works by dividing the atoms into groups that has monotronic increasing relation
+            */
             
             double stepSize = ((atoms.get(atoms.size()-1)).getX() - (atoms.get(0)).getX()) / 100.0;
             double currX = atoms.get(0).getX();
@@ -65,7 +67,10 @@ public class SRep {
             // compute the orientation of current inner atom 
             
             // should force the upper and lower pair of spokes having the same angle to the medial locus
-         
+            if (this.forcedMrep) 
+            {
+                makeMeAnMrep();
+            }
         }
     }
     
@@ -73,9 +78,9 @@ public class SRep {
         System.out.println("interpolating spokes....");    
     }
     
-    public void makeMeAnMrep() {
+    private void makeMeAnMrep() {
         System.out.println("forcing the upper and lower spokes having the same angle to the medial curve");
-        
+            
     }
     
     private double evaluate(double x) {
@@ -84,7 +89,6 @@ public class SRep {
             if (this.hasInterpolation) {
                  lastValue = this.locusFunction.value(x);
                  return lastValue;
-
             }
         }
         catch(OutOfRangeException e) {
